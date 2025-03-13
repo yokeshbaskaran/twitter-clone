@@ -17,7 +17,7 @@ export const signup = async (req, res) => {
 
     const existingEmail = await User.findOne({ email });
     if (existingEmail) {
-      return res.status(400).json({ error: "Email is already taken" });
+      return res.status(400).json({ error: "Email is already registered" });
     }
 
     if (password.length < 6) {
